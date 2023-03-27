@@ -15,13 +15,23 @@ runs:
         token: ${{ inputs.token }}
         submodules: recursive
         lfs: true
+
     # https://github.com/actions/checkout/issues/270
     - run: |
         git lfs install
         git lfs pull
         git submodule foreach git lfs install
         git submodule foreach --recursive git lfs pull
+      if: ${{ runner.os != 'Windows' }}
       shell: bash
+
+    - run: |
+        git lfs install
+        git lfs pull
+        git submodule foreach git lfs install
+        git submodule foreach --recursive git lfs pull
+      if: ${{ runner.os == 'Windows' }}
+      shell: pwsh
 
 branding:
   icon: "box"
