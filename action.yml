@@ -5,6 +5,7 @@ description: "Also build Git LFS environment at checkout"
 inputs:
   token:
     required: true
+    default: ${{ secrets.GITHUB_TOKEN }}
 
 runs:
   using: "composite"
