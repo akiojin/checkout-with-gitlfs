@@ -1,0 +1,28 @@
+name: Build & Test
+
+on: push
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm run build
+
+  Test:
+    runs-on: macos-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./
+        with:
+          key-id: ${{ secrets.APPLE_STORE_CONNECT_KEY_ID }}
+          issuer-id: ${{ secrets.APPLE_STORE_CONNECT_ISSUER_ID }}
+          key: ${{ secrets.APPLE_STORE_CONNECT_KEY }}

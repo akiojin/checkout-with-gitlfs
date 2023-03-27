@@ -1,0 +1,22 @@
+name: "Checkout with Git LFS"
+
+description: "Also build Git LFS environment at checkout"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+        with:
+        token: ${{ secrets.GIT_CREDENTIAL_REPOSITORY_PASSWORD }}
+        submodules: recursive
+        lfs: true
+    # https://github.com/actions/checkout/issues/270
+    - run: |
+        git lfs install
+        git lfs pull
+        git submodule foreach git lfs install
+        git submodule foreach --recursive git lfs pull
+
+branding:
+  icon: "box"
+  color: "orange"

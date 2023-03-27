@@ -1,0 +1,36 @@
+{
+  "name": "@akiojin/checkout-with-gitlfs-github-action",
+  "version": "0.0.0",
+  "description": "This action creates the JSON of the API key to use the Store Connect API.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm install",
+    "clean": "rimraf dist && rimraf node_modules && npm cache clean --force"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiojin/checkout-with-gitlfs-github-action.git"
+  },
+  "keywords": [
+    "checkout",
+    "Git",
+    "LFS",
+    "Git LFS"
+  ],
+  "author": "Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akiojin/checkout-with-gitlfs-github-action/issues"
+  },
+  "homepage": "https://github.com/akiojin/checkout-with-gitlfs-github-action#readme",
+  "devDependencies": {
+    "@commitlint/cli": "17.5.0",
+    "@commitlint/config-conventional": "17.4.4",
+    "@types/node": "18.15.6",
+    "@vercel/ncc": "0.36.1",
+    "husky": "8.0.3",
+    "rimraf": "4.4.1",
+    "typescript": "5.0.2"
+  },
+  "private": true
+}
