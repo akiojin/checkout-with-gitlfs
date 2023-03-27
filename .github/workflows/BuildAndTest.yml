@@ -15,8 +15,11 @@ jobs:
       - run: npm run build
 
   Test:
-    runs-on: macos-latest
+    runs-on: ${{ matrix.OS }}
     timeout-minutes: 5
+    strategy:
+      matrix:
+        OS: [ macos-latest, windows-latest, ubuntu-latest ]
 
     steps:
       - uses: actions/checkout@v3
