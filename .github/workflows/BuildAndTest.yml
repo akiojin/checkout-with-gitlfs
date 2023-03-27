@@ -22,7 +22,3 @@ jobs:
       - uses: actions/checkout@v3
 
       - uses: ./
-        with:
-          key-id: ${{ secrets.APPLE_STORE_CONNECT_KEY_ID }}
-          issuer-id: ${{ secrets.APPLE_STORE_CONNECT_ISSUER_ID }}
-          key: ${{ secrets.APPLE_STORE_CONNECT_KEY }}
