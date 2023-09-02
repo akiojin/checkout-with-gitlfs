@@ -1,1 +1,2 @@
-# checkout-with-gitlfs
+# checkout-with-gitlfs-github-action
+
