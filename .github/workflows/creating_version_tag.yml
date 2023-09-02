@@ -1,4 +1,4 @@
-﻿# (C) 2010 CLOUD CREATIVE STUDIOS, INC.
+﻿# (C) Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)
 
 name: Creating a version tag
 
@@ -9,8 +9,7 @@ on:
 
 jobs:
   VersionTagging:
-    runs-on:
-      - ubuntu-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
       contents: write

@@ -1,0 +1,27 @@
+# (C) Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)
+
+name: Auto Merge
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  AutoMerge:
+    runs-on:
+      - ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Auto Merge
+        run: |
+          gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

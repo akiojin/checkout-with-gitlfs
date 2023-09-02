@@ -1,3 +1,5 @@
+# (C) Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)
+
 name: Build & Test
 
 on: push
