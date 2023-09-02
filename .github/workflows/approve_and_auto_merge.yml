@@ -1,6 +1,6 @@
 # (C) Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)
 
-name: Approve & Auto Merge
+name: Auto Merge
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ on:
       - synchronize
 
 jobs:
-  ApproveAndAutoMerge:
+  AutoMerge:
     runs-on:
       - ubuntu-latest
     permissions:
@@ -19,11 +19,9 @@ jobs:
       pull-requests: write
 
     steps:
-      - name: approve & auto merge
+      - name: Auto Merge
         run: |
-          gh pr review --approve "$PR_URL"
           gh pr merge --auto --merge "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.PULL_REQUEST_AUTO_APPROVE_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.PULL_REQUEST_AUTO_APPROVE_TOKEN }}
