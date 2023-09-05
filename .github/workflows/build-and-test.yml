@@ -1,4 +1,4 @@
-# (C) Akio Jinsenji <akio-jinsenji@cloud-creative-studios.com> (https://github.com/akiojin)
+# Copyright (c) 2022 Akio Jinsenji
 
 name: Build & Test
 
@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -24,7 +24,7 @@ jobs:
         OS: [ macos-latest, windows-latest, ubuntu-latest ]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: ./
         with:
