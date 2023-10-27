@@ -17,6 +17,13 @@ inputs:
       Specifies whether to use cone-mode when doing a sparse checkout.
     required: false
     default: true
+  ref:
+    description: >
+      The branch, tag or SHA to checkout. When checking out the repository that
+      triggered a workflow, this defaults to the reference or SHA for that event.
+      Otherwise, uses the default branch.
+    required: false
+    default: ''
 
 runs:
   using: "composite"
@@ -26,6 +33,7 @@ runs:
         token: ${{ inputs.token }}
         submodules: recursive
         lfs: true
+        ref: ${{ inputs.ref }}
       if: ${{ inputs.sparse-checkout == null }}
 
     - uses: actions/checkout@v4
@@ -33,6 +41,7 @@ runs:
         token: ${{ inputs.token }}
         submodules: recursive
         lfs: true
+        ref: ${{ inputs.ref }}
         sparse-checkout: ${{ inputs.sparse-checkout }}
         sparse-checkout-cone-mode: ${{ inputs.sparse-checkout-cone-mode }}
       if: ${{ inputs.sparse-checkout != null }}
