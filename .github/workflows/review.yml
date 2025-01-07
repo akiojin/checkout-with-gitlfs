@@ -1,10 +1,9 @@
-name: Review PRs
+name: Review
 
 on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+  push:
+    branches:
+      - develop
 
 jobs:
   Review:
