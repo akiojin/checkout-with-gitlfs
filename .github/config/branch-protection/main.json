@@ -21,15 +21,15 @@
                 "app_id": 15368
             },
             {
-                "context": "Test (macos-latest",
+                "context": "Test (macos-latest)",
                 "app_id": 15368
             },
             {
-                "context": "Test (windows-latest",
+                "context": "Test (windows-latest)",
                 "app_id": 15368
             },
             {
-                "context": "Test (ubuntu-latest",
+                "context": "Test (ubuntu-latest)",
                 "app_id": 15368
             }
         ]
