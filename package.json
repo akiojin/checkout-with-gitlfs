@@ -1,6 +1,6 @@
 {
   "name": "@akiojin/checkout-with-gitlfs-github-action",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "This action creates the JSON of the API key to use the Store Connect API.",
   "main": "dist/index.js",
   "scripts": {
@@ -28,10 +28,7 @@
   },
   "homepage": "https://github.com/akiojin/checkout-with-gitlfs-github-action#readme",
   "devDependencies": {
-    "@commitlint/cli": "18.4.3",
-    "@commitlint/config-conventional": "18.4.3",
     "@types/node": "20.10.6",
-    "husky": "8.0.3",
     "rimraf": "5.0.5"
   },
   "private": true
