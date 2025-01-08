@@ -28,7 +28,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
+    - name: 🌱 Checkout to the branch
+      uses: actions/checkout@v4
       with:
         token: ${{ inputs.token }}
         submodules: recursive
@@ -36,7 +37,8 @@ runs:
         ref: ${{ inputs.ref }}
       if: ${{ inputs.sparse-checkout == null }}
 
-    - uses: actions/checkout@v4
+    - name: 🌱 Checkout to the branch
+      uses: actions/checkout@v4
       with:
         token: ${{ inputs.token }}
         submodules: recursive
