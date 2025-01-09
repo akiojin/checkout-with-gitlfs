@@ -19,7 +19,7 @@ jobs:
         OS: [ macos-latest, windows-latest, ubuntu-latest ]
 
     steps:
-      - name: 🌱 Checkout to the branch
+      - name: 🔄 Checkout to the branch
         uses: actions/checkout@v4
 
       - uses: ./

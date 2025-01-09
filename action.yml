@@ -28,7 +28,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: 🌱 Checkout to the branch
+    - name: 🔄 Checkout to the branch
       uses: actions/checkout@v4
       with:
         token: ${{ inputs.token }}
@@ -37,7 +37,7 @@ runs:
         ref: ${{ inputs.ref }}
       if: ${{ inputs.sparse-checkout == null }}
 
-    - name: 🌱 Checkout to the branch
+    - name: 🔄 Checkout to the branch
       uses: actions/checkout@v4
       with:
         token: ${{ inputs.token }}
