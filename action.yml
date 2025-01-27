@@ -66,5 +66,5 @@ runs:
       shell: pwsh
 
 branding:
-  icon: "box"
-  color: "orange"
+  icon: 'box'
+  color: 'orange'
